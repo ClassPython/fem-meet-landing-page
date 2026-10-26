@@ -1,0 +1,445 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+}
+
+:root{
+
+  /* ----------------- */
+    --circle-size: 56px;
+    --line-extension: 80px;
+    --primary-color:white;
+    --line-color: #64748b;
+  /* ------------------ */
+
+  /* 16px */
+  font-size: 100%;
+
+
+  /* Colors */
+  /* primary */
+  --cyan-600:hsl(192, 37%, 48%);
+  --cyan-300:hsl(192, 90%, 77%);
+  --purple-600:hsl(268, 34%, 53%);
+  --purple-300:hsl(268, 100%, 86%);
+
+  /* slate */
+  --slate-900:hsl(240, 21%, 20%);
+  --slate-600:hsl(240, 10%, 57%);
+  --slate-300:hsl(240, 18%, 85%);
+
+  /* neutral */
+  --white:hsl(0, 0%, 98%);
+
+  /* red hat black is 900 weight */
+  /* red hat regular is 400 weight */
+  /* red hat medium is 500 weight */
+
+  /* Typography */
+  /* font family */
+  font-family: 'Red Hat Display', sans-serif;
+
+  /* Text preset I -  red hat display black - 64px 110% 0px letter spacing*/
+  --h1-size:4rem;
+  --h1-weight:900;
+  --h1-line-height:1.1;
+  --h1-letter-spacing:0;
+
+  /* Text preset II -  red hat display black - 40px 110% 0px letter spacing*/
+  --h2-size:2.5rem;
+  --h2-weight:900;
+  --h2-line-height:1.1;
+  --h2-letter-spacing:0;
+
+  /* Text preset III -  red hat display black - 16px 110% 4px letter spacing*/
+  --h3-size:1rem;
+  --h3-weight:900;
+  --h3-line-height:1.1;
+  --h3-letter-spacing:.25rem;
+
+  /* Text preset IV -  red hat display medium - 18px 110% 0px letter spacing*/
+  --h4-size:1.125rem;
+  --h4-weight:500;
+  --h4-line-height:1.1;
+  --h4-letter-spacing:0;
+
+  /* Text preset V -  red hat display medium - 16px 150% 0px letter spacing*/
+  --h5-size:1rem;
+  --h5-weight:500;
+  --h5-line-height:1.5;
+  --h5-letter-spacing:0;
+
+
+  /* Text preset VI -  red hat display medium - 12px 110% 0px letter spacing*/
+ --h6-size:.75rem;
+ --h6-weight:500;
+ --h6-line-height:1.1;
+ --h6-letter-spacing:.25rem;
+
+ /* Text preset VII -  red hat display black - 32px 110% 0px letter spacing*/
+ --h7-size:2rem;
+ --h7-weight:900;
+ --h7-line-height:1.1;
+ --h7-letter-spacing:0;
+
+
+  /* spacing */
+  --spacing-700:7rem;    /* 112 */
+  --spacing-500:5rem;    /* 80 */
+  --spacing-450:4.5rem;  /* 72 */
+  --spacing-400:4rem;    /* 64 */
+  --spacing-350:3.5rem;  /* 56 */
+  --spacing-250:2.5rem; /* 40 */
+  --spacing-200:2rem;   /* 32 */
+  --spacing-150:1.5rem; /* 24 */
+  --spacing-100:1rem;   /* 16 */
+  --spacing-50:.5rem;   /* 8 */
+  --spacing-25:.25rem;  /* 4 */
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: start; */
+    /* align-items: center; */
+}
+
+
+/* Force the main area to grow and take up all remaining empty space */
+main{
+    flex: 1 0 auto;
+}
+
+/* Prevent header and footer from shrinking out of proportion */
+header, footer{
+    flex-shrink: 0;
+}
+
+/* --------------------------- */
+.header-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 48px 80px 0px 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    width: 118px;
+    height: 28px;
+}
+
+
+/* --------- hero container  ----------- */
+
+.main-hero-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    padding: var(--spacing-400) 0 var(--spacing-200) 0;
+}
+
+.hero-container-images{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    height: clamp(160px, 23.55px + 36.39vw, 303px);
+    column-gap: 17px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-image-left, .hero-image-right{
+    width: clamp(208.5px, 3.447px + 54.68vw, 394px);
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.hero-container-content{
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-150);
+    padding-top: 48px;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.hero-content-title{
+    font-size: var(--h2-size);
+    font-weight: var(--h2-weight);
+    line-height: var(--h2-line-height);
+    letter-spacing: var(--h2-letter-spacing);
+    color: var(--slate-900);
+    text-align: center;
+    /* height: 88px; */
+}
+
+.hero-content-description{
+    font-size: var(--h5-size);
+    font-weight: var(--h5-weight);
+    line-height: var(--h5-line-height);
+    letter-spacing: var(--h5-letter-spacing);
+    color: var(--slate-600);
+    text-align: center;
+    /* height:72px; */
+}
+
+/* btn container */
+
+.btn-container{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    row-gap: var(--spacing-100);
+}
+
+button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* box-align: center; */
+    border: none;
+    border-radius: 29px;
+}
+
+
+/* ? add hover to buttons  */
+.btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 4px;
+}   
+
+.btn-large{
+    width: 193px;
+    height: 56px;
+}
+
+.btn-small{
+    width: 161px;
+    height:56px;
+}
+
+.btn-cyan{
+    background-color: var(--cyan-600);
+}
+
+.btn-purple{
+    background-color: var(--purple-600);
+}
+
+.btn-text, .btn-version{
+    font-size: var(--h5-size);
+    font-weight: var(--h5-weight);
+    line-height: var(--h5-line-height);
+    letter-spacing: var(--h5-letter-spacing);
+    color: var(--white);
+}
+
+.btn-version{
+    color: var(--cyan-300);
+}
+
+/*  -----  content container ------ */
+.main-content-container{
+    display: flex;
+    flex-direction: column;
+    justify-content:start;
+    align-items: center;
+    /* height: clamp(759px, 1063.85px - 39.69vw, 915px);; */
+    padding: 32px 32px 64px 32px;
+}
+
+/* --- circle ----- */
+.main-content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 64px;
+}
+
+.circle-container{
+    position: relative;
+    /* Extra top padding accommodates the 50px line extension */
+    padding-top: var(--line-extension);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vertical-line{
+    position: absolute;
+    /* Starts 50px above the container's normal content flow */
+    top: 0; 
+    width: 1px;
+    /* Height covers the 50px extension down to the top of the circle */
+    height: var(--line-extension);
+    background-color: var(--slate-300);
+    color: var(--slate-300);
+    border-radius: 1px;
+}
+
+.circle{
+    width: var(--circle-size);
+    height: var(--circle-size);
+    color: var(--slate-600);
+    border-radius: 50%;
+    border: 1px solid var(--slate-300);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--h5-size);
+    font-weight: var(--h5-weight);
+    letter-spacing: var(--h5-letter-spacing);
+    line-height: var(--h5-line-height);
+    background-color: var(--white);
+}
+
+
+/* ------ four images  --------- */
+
+.content-four-images{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    gap: 16px;
+    flex: 1;  
+    /* Makes the grid take up the remaining space in the flex container */
+    min-height: 0;
+    min-width: 0;
+}
+
+.content-four-images img{
+    width: 100%;
+    height: auto;
+    object-fit:cover;
+    /* Ensures images fill the grid cell nicely while keeping aspect ratio */
+    display: block;
+}
+
+/* ----- content text ----- */
+.content-text{
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+}
+
+.title-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-container-title{
+    font-size: var(--h6-size);
+    font-weight: var(--h6-weight);
+    letter-spacing: var(--h6-letter-spacing);
+    line-height: var(--h6-line-height);
+    color: var(--cyan-600);
+    text-align: center;
+}
+
+.title-container-description{
+    font-size: var(--h7-size);
+    font-weight: var(--h7-weight);
+    letter-spacing: var(--h7-letter-spacing);
+    line-height: var(--h7-line-height);
+    color: var(--slate-900);
+    text-align: center;
+}
+
+.description-container-description{
+    font-size: var(--h5-size);
+    font-weight: var(--h5-weight);
+    letter-spacing: var(--h5-letter-spacing);
+    line-height: var(--h5-line-height);
+    color: var(--slate-600);
+    text-align: center;
+
+}
+
+/* ------- footer container --------- */
+.footer-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* Prevents the footer from squishing on small screens */
+    flex-shrink: 0;
+
+    height: 100%;
+    width: 100%;
+}
+
+/* ---------------------- circle ---------------- */
+.footer-container .circle-container{
+    position: relative;
+    top: 30px;
+    z-index: 2;
+}
+
+
+/* -------------- footer ------------------- */
+
+.footer-hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 64px 32px;
+    row-gap: 24px;
+    width: 100%;
+    background-image:
+        linear-gradient(rgba(77, 150, 168, 0.8), rgba(77, 150, 168, 0.8)),
+        url(../images/desktop/image-footer.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    z-index: 1;
+}
+
+.footer-title{
+    font-size: var(--h7-size);
+    font-weight: var(--h7-weight);
+    letter-spacing: var(--h7-letter-spacing);
+    line-height: var(--h7-line-height);
+    color: var(--white);
+    text-align: center;
+}
+
+.footer-description{
+  font-size: var(--h5-size);
+  font-weight: var(--h5-weight);
+  letter-spacing: var(--h5-letter-spacing);
+  line-height: var(--h5-line-height);
+  color: var(--white);
+  text-align: center;
+}
+
+.footer-hero .btn-purple{
+  background-color: var(--purple-600);
+}
+
+.footer-hero .btn-version{
+  color: var(--purple-300);
+}
