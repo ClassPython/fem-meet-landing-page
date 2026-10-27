@@ -324,11 +324,13 @@ button{
     min-width: 0;
 }
 
+/* ! height */
 .content-four-images img{
     width: 100%;
     height: auto;
     object-fit:cover;
     /* Ensures images fill the grid cell nicely while keeping aspect ratio */
+    aspect-ratio: 147.5/144;
     display: block;
 }
 
@@ -381,6 +383,7 @@ button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: -28px;
 
     /* Prevents the footer from squishing on small screens */
     flex-shrink: 0;
@@ -392,7 +395,7 @@ button{
 /* ---------------------- circle ---------------- */
 .footer-container .circle-container{
     position: relative;
-    top: 30px;
+    top: 28px;
     z-index: 2;
 }
 
