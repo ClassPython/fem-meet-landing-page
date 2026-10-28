@@ -12,7 +12,7 @@ html, body{
 
 :root{
 
-  /* ----------------- */
+  /* ------  circle ----------- */
     --circle-size: 56px;
     --line-extension: 80px;
     --primary-color:white;
@@ -89,6 +89,23 @@ html, body{
  --h7-line-height:1.1;
  --h7-letter-spacing:0;
 
+ /* Text preset IIX -  red hat display black - 48px 110% 0px letter spacing*/
+ --h8-size:3rem;
+ --h8-weight:900;
+ --h8-line-height:1.1;
+ --h8-letter-spacing:0; 
+
+ /* Text preset IX - red hat display  14px 110% 0px letter spacing
+  */
+ --h9-size:.875rem;
+ --h9-weight:500;
+ --h9-line-height:1.1;
+ --h9-letter-spacing:0; 
+
+ /* font size 36 px */
+ --h10-size:2.25rem;
+
+
 
   /* spacing */
   --spacing-700:7rem;    /* 112 */
@@ -156,7 +173,9 @@ header, footer{
     align-items: center;
 
     height: clamp(160px, 23.55px + 36.39vw, 303px);
-    column-gap: 17px;
+    /* ? use clamp on col-gap to 32px and set at media query */
+    column-gap: clamp(17px, 2.687px + 3.817vw, 32px);
+    /* column-gap: 17px; */
     width: 100%;
     overflow: hidden;
 }
@@ -172,7 +191,9 @@ header, footer{
     display: flex;
     flex-direction: column;
     row-gap: var(--spacing-150);
-    padding-top: 48px;
+    /* ? 48px to 72px*/
+    padding-top: clamp(3rem, 1.5687rem + 6.1069vw, 4.5rem);;
+    /* padding-top: 48px; */
     padding-left: 32px;
     padding-right: 32px;
 }
@@ -445,4 +466,93 @@ button{
 
 .footer-hero .btn-version{
   color: var(--purple-300);
+}
+
+@media screen and (min-width:768px){
+
+.main-hero-container{
+    /*  ?clamp above  */
+    padding-bottom: 64px;
+}    
+
+
+.hero-container-images{
+    /* ? use clamp in 375 section, then clamp here start at 32px and grow to the 1440px wide */
+    column-gap: 32px;
+}
+
+.hero-container-content{
+    column-gap: 72px;
+    /* ? bottom part need clamp above */
+    padding-left: 159.85px;
+    padding-right: 159.85px;
+}
+
+.hero-content-title{
+    font-size: var(--h8-size);
+    font-weight: var(--h8-weight);
+    line-height: var(--h8-line-height);
+    letter-spacing: var(--h8-letter-spacing);
+    /* ? add clamps above */
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.btn-container{
+    flex-direction: row;
+    column-gap: 17px;
+}
+
+.main-content-container{
+    /* ? maybe clamp above in 375px*/
+    padding-top: 56px;
+}
+
+.main-content{
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.content-four-images{
+    display:grid;
+    grid-template-columns:repeat(4, minmax(0, 1fr));
+    row-gap: 0;
+    column-gap: 24px;
+}
+
+.content-four-images img{
+    /* ? may have to clamp this height */
+    width: 100%;
+    min-height: 160px;
+}
+
+.title-container{
+    padding-left: 117px;
+    padding-right: 117px;
+}
+/* ? break down fonts by size then a section for weight, then height, then letter spacing. */
+.title-container-title{
+    font-size: var(--h9-size);
+    font-weight: var(--h9-weight);
+    line-height: var(--h9-line-height);
+    letter-spacing: var(--h9-letter-spacing);
+}
+
+.title-container-description{
+    font-size: var(--h10-size);
+}
+
+.description-container{
+    padding-left: 88px;
+    padding-right: 88px;
+}
+
+.footer-title{
+    font-size: var(--h10-size);
+}
+
+.footer-description{
+    padding: 0 100px;
+}
+
 }
