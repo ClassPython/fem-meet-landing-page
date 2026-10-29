@@ -10,6 +10,14 @@ html, body{
     min-height: 100vh;
 }
 
+/* 
+Slope (vw): (Max Value - Min Value) / (Max Breakpoint - Min Breakpoint) * 100
+(88 - 0) / (768 - 375) * 100 = 22.3918vw
+Intercept (px): Min Value - (Min Breakpoint * (Slope / 100))
+0 - (375 * 0.223918) = -83.969px
+
+*/
+
 :root{
 
   /* ------  circle ----------- */
@@ -163,7 +171,7 @@ header, footer{
     justify-content: start;
     align-items: center;
     width: 100%;
-    padding: var(--spacing-400) 0 var(--spacing-200) 0;
+    padding: var(--spacing-400) 0 clamp(32px, 8.14vw + 1.46px, 64px) 0;
 }
 
 .hero-container-images{
@@ -173,9 +181,7 @@ header, footer{
     align-items: center;
 
     height: clamp(160px, 23.55px + 36.39vw, 303px);
-    /* ? use clamp on col-gap to 32px and set at media query */
     column-gap: clamp(17px, 2.687px + 3.817vw, 32px);
-    /* column-gap: 17px; */
     width: 100%;
     overflow: hidden;
 }
@@ -191,11 +197,10 @@ header, footer{
     display: flex;
     flex-direction: column;
     row-gap: var(--spacing-150);
-    /* ? 48px to 72px*/
-    padding-top: clamp(3rem, 1.5687rem + 6.1069vw, 4.5rem);;
-    /* padding-top: 48px; */
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-top: clamp(3rem, 1.5687rem + 6.1069vw, 4.5rem);
+
+    padding-left: clamp(32px, -89.87px + 32.53vw, 159.85px);
+    padding-right: clamp(32px, -89.87px + 32.53vw, 159.85px);
 }
 
 .hero-content-title{
@@ -205,7 +210,8 @@ header, footer{
     letter-spacing: var(--h2-letter-spacing);
     color: var(--slate-900);
     text-align: center;
-    /* height: 88px; */
+    padding-left:  clamp(10px, 10.687vw - 30.08px, 52px);
+    padding-right:  clamp(10px, 10.687vw - 30.08px, 52px);
 }
 
 .hero-content-description{
@@ -215,7 +221,6 @@ header, footer{
     letter-spacing: var(--h5-letter-spacing);
     color: var(--slate-600);
     text-align: center;
-    /* height:72px; */
 }
 
 /* btn container */
@@ -232,7 +237,6 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* box-align: center; */
     border: none;
     border-radius: 29px;
 }
@@ -283,8 +287,7 @@ button{
     flex-direction: column;
     justify-content:start;
     align-items: center;
-    /* height: clamp(759px, 1063.85px - 39.69vw, 915px);; */
-    padding: 32px 32px 64px 32px;
+    padding: clamp(32px, 6.107vw + 9.1px, 56px) 32px 64px 32px;
 }
 
 /* --- circle ----- */
@@ -368,6 +371,9 @@ button{
     row-gap: 16px;
     justify-content: center;
     align-items: center;
+    /* padding 0 to 117 */
+    padding-left: clamp(0px, 29.77vw - 111.64px, 117px);
+    padding-right: clamp(0px, 29.77vw - 111.64px, 117px);
 }
 
 .title-container-title{
@@ -386,6 +392,12 @@ button{
     line-height: var(--h7-line-height);
     color: var(--slate-900);
     text-align: center;
+}
+
+.description-container{
+    padding-left:clamp(0px, 22.39vw - 83.97px, 88px) ;
+    padding-right:clamp(0px, 22.39vw - 83.97px, 88px) ;
+
 }
 
 .description-container-description{
@@ -458,6 +470,7 @@ button{
   line-height: var(--h5-line-height);
   color: var(--white);
   text-align: center;
+  padding: 0px  clamp(2px, 24.94vw - 91.51px, 100px);
 }
 
 .footer-hero .btn-purple{
@@ -471,19 +484,16 @@ button{
 @media screen and (min-width:768px){
 
 .main-hero-container{
-    /*  ?clamp above  */
     padding-bottom: 64px;
 }    
 
 
 .hero-container-images{
-    /* ? use clamp in 375 section, then clamp here start at 32px and grow to the 1440px wide */
     column-gap: 32px;
 }
 
 .hero-container-content{
     column-gap: 72px;
-    /* ? bottom part need clamp above */
     padding-left: 159.85px;
     padding-right: 159.85px;
 }
@@ -493,9 +503,8 @@ button{
     font-weight: var(--h8-weight);
     line-height: var(--h8-line-height);
     letter-spacing: var(--h8-letter-spacing);
-    /* ? add clamps above */
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 52px;
+    padding-right: 52px;
 }
 
 .btn-container{
@@ -504,7 +513,6 @@ button{
 }
 
 .main-content-container{
-    /* ? maybe clamp above in 375px*/
     padding-top: 56px;
 }
 
@@ -521,7 +529,6 @@ button{
 }
 
 .content-four-images img{
-    /* ? may have to clamp this height */
     width: 100%;
     min-height: 160px;
 }
@@ -530,6 +537,7 @@ button{
     padding-left: 117px;
     padding-right: 117px;
 }
+
 /* ? break down fonts by size then a section for weight, then height, then letter spacing. */
 .title-container-title{
     font-size: var(--h9-size);
@@ -556,3 +564,5 @@ button{
 }
 
 }
+
+/* header 80 80 80  */
