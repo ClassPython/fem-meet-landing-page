@@ -35,8 +35,12 @@ Intercept (px): Min Value - (Min Breakpoint * (Slope / 100))
   /* primary */
   --cyan-600:hsl(192, 37%, 48%);
   --cyan-300:hsl(192, 90%, 77%);
+  --cyan-100:hsl(192, 54%, 64%);
+
   --purple-600:hsl(268, 34%, 53%);
   --purple-300:hsl(268, 100%, 86%);
+  --purple-100:hsl(268, 55%, 71%);
+  
 
   /* slate */
   --slate-900:hsl(240, 21%, 20%);
@@ -265,8 +269,16 @@ button{
     background-color: var(--cyan-600);
 }
 
+.btn-cyan:hover{
+    background-color: var(--cyan-100);
+}
+
 .btn-purple{
     background-color: var(--purple-600);
+}
+
+.btn-purple:hover{
+    background-color: var(--purple-100);
 }
 
 .btn-text, .btn-version{
@@ -471,10 +483,6 @@ button{
   color: var(--white);
   text-align: center;
   padding: 0px  clamp(2px, 24.94vw - 91.51px, 100px);
-}
-
-.footer-hero .btn-purple{
-  background-color: var(--purple-600);
 }
 
 .footer-hero .btn-version{
