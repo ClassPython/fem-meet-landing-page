@@ -369,7 +369,7 @@ button{
 
 .title-container-title{
     font-size: var(--12-size);
-    font-weight: var(--500-weight);
+    font-weight: var(--900-weight);
     line-height: var(--11-line-height);
     letter-spacing: var(--25-letter-spacing);
     color: var(--cyan-600);
@@ -529,8 +529,6 @@ button{
 
 .title-container-title{
     font-size: var(--14-size);
-    font-weight: var(--500-weight);
-    line-height: var(--11-line-height);
     letter-spacing: var(--0-letter-spacing);
 }
 
