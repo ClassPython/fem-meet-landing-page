@@ -10,14 +10,6 @@ html, body{
     min-height: 100vh;
 }
 
-/* 
-Slope (vw): (Max Value - Min Value) / (Max Breakpoint - Min Breakpoint) * 100
-(88 - 0) / (768 - 375) * 100 = 22.3918vw
-Intercept (px): Min Value - (Min Breakpoint * (Slope / 100))
-0 - (375 * 0.223918) = -83.969px
-
-*/
-
 :root{
 
   /* ------  circle ----------- */
@@ -30,7 +22,6 @@ Intercept (px): Min Value - (Min Breakpoint * (Slope / 100))
   /* 16px */
   font-size: 100%;
 
-
   /* Colors */
   /* primary */
   --cyan-600:hsl(192, 37%, 48%);
@@ -41,7 +32,6 @@ Intercept (px): Min Value - (Min Breakpoint * (Slope / 100))
   --purple-300:hsl(268, 100%, 86%);
   --purple-100:hsl(268, 55%, 71%);
   
-
   /* slate */
   --slate-900:hsl(240, 21%, 20%);
   --slate-600:hsl(240, 10%, 57%);
@@ -58,65 +48,61 @@ Intercept (px): Min Value - (Min Breakpoint * (Slope / 100))
   /* font family */
   font-family: 'Red Hat Display', sans-serif;
 
-  /* Text preset I -  red hat display black - 64px 110% 0px letter spacing*/
-  --h1-size:4rem;
-  --h1-weight:900;
-  --h1-line-height:1.1;
-  --h1-letter-spacing:0;
 
+  /* Due to the variety of text presets - pick from size, weight, line-height, and letter-spacing to create each typography type. */
+  /* font size */
+  --64-size:4rem;/* 64px */
+  --48-size:3rem;/* 48px */
+  --40-size:2.5rem;/* 40px */
+  --36-size:2.25rem;/* 36px */
+  --32-size:2rem;/* 32px */
+  --18-size:1.125rem;/* 18px */
+  --16-size:1rem;/* 16px */
+  --14-size:.875rem;/* 14px */
+  --12-size:.75rem;/* 12px */
+
+  /* font weight */
+  --900-weight:900;
+  --500-weight:500;
+
+  /* line height */
+  --0-line-height:0;
+  --11-line-height:1.1;
+  --15-line-height:1.5;
+
+  /* letter spacing */
+  --0-letter-spacing:0;
+  --25-letter-spacing:.25rem;
+
+
+
+/* Typography types */
+  /* Text preset I -  red hat display black - 64px 110% 0px letter spacing*/
+  
   /* Text preset II -  red hat display black - 40px 110% 0px letter spacing*/
-  --h2-size:2.5rem;
-  --h2-weight:900;
-  --h2-line-height:1.1;
-  --h2-letter-spacing:0;
+  
 
   /* Text preset III -  red hat display black - 16px 110% 4px letter spacing*/
-  --h3-size:1rem;
-  --h3-weight:900;
-  --h3-line-height:1.1;
-  --h3-letter-spacing:.25rem;
+  
 
   /* Text preset IV -  red hat display medium - 18px 110% 0px letter spacing*/
-  --h4-size:1.125rem;
-  --h4-weight:500;
-  --h4-line-height:1.1;
-  --h4-letter-spacing:0;
+  
 
   /* Text preset V -  red hat display medium - 16px 150% 0px letter spacing*/
-  --h5-size:1rem;
-  --h5-weight:500;
-  --h5-line-height:1.5;
-  --h5-letter-spacing:0;
-
+  
 
   /* Text preset VI -  red hat display medium - 12px 110% 0px letter spacing*/
- --h6-size:.75rem;
- --h6-weight:500;
- --h6-line-height:1.1;
- --h6-letter-spacing:.25rem;
+ 
 
  /* Text preset VII -  red hat display black - 32px 110% 0px letter spacing*/
- --h7-size:2rem;
- --h7-weight:900;
- --h7-line-height:1.1;
- --h7-letter-spacing:0;
+ 
 
  /* Text preset IIX -  red hat display black - 48px 110% 0px letter spacing*/
- --h8-size:3rem;
- --h8-weight:900;
- --h8-line-height:1.1;
- --h8-letter-spacing:0; 
-
- /* Text preset IX - red hat display  14px 110% 0px letter spacing
+ 
+ /* Text preset IX - red hat display medium - 14px 110% 0px letter spacing
   */
- --h9-size:.875rem;
- --h9-weight:500;
- --h9-line-height:1.1;
- --h9-letter-spacing:0; 
-
- /* font size 36 px */
- --h10-size:2.25rem;
-
+ 
+ /*  Text preset X - red hat display medium font size 36 px */
 
 
   /* spacing */
@@ -136,10 +122,7 @@ Intercept (px): Min Value - (Min Breakpoint * (Slope / 100))
 body{
     display: flex;
     flex-direction: column;
-    /* justify-content: start; */
-    /* align-items: center; */
 }
-
 
 /* Force the main area to grow and take up all remaining empty space */
 main{
@@ -166,7 +149,6 @@ header, footer{
     height: 28px;
 }
 
-
 /* --------- hero container  ----------- */
 
 .main-hero-container{
@@ -175,7 +157,7 @@ header, footer{
     justify-content: start;
     align-items: center;
     width: 100%;
-    padding: var(--spacing-400) 0 clamp(32px, 8.14vw + 1.46px, 64px) 0;
+    padding: var(--spacing-400) 0 clamp(var(--spacing-200), 8.14vw + 1.46px, var(--spacing-400)) 0;
 }
 
 .hero-container-images{
@@ -208,10 +190,10 @@ header, footer{
 }
 
 .hero-content-title{
-    font-size: var(--h2-size);
-    font-weight: var(--h2-weight);
-    line-height: var(--h2-line-height);
-    letter-spacing: var(--h2-letter-spacing);
+    font-size: var(--16-size);
+    font-weight: var(--900-weight);
+    line-height: var(--11-line-height);
+    letter-spacing: var(--0-letter-spacing);
     color: var(--slate-900);
     text-align: center;
     padding-left:  clamp(10px, 10.687vw - 30.08px, 52px);
@@ -219,10 +201,10 @@ header, footer{
 }
 
 .hero-content-description{
-    font-size: var(--h5-size);
-    font-weight: var(--h5-weight);
-    line-height: var(--h5-line-height);
-    letter-spacing: var(--h5-letter-spacing);
+    font-size: var(--16-size);
+    font-weight: var(--500-weight);
+    line-height: var(--15-line-height);
+    letter-spacing: var(--0-letter-spacing);
     color: var(--slate-600);
     text-align: center;
 }
@@ -245,14 +227,12 @@ button{
     border-radius: 29px;
 }
 
-
-/* ? add hover to buttons  */
 .btn{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    column-gap: 4px;
+    column-gap: var(--spacing-25);
 }   
 
 .btn-large{
@@ -282,10 +262,10 @@ button{
 }
 
 .btn-text, .btn-version{
-    font-size: var(--h5-size);
-    font-weight: var(--h5-weight);
-    line-height: var(--h5-line-height);
-    letter-spacing: var(--h5-letter-spacing);
+    font-size: var(--16-size);
+    font-weight: var(--500-weight);
+    line-height: var(--15-line-height);
+    letter-spacing: var(--0-letter-spacing);
     color: var(--white);
 }
 
@@ -293,25 +273,25 @@ button{
     color: var(--cyan-300);
 }
 
-/*  -----  content container ------ */
+/*  -----  main content container ------ */
 .main-content-container{
     display: flex;
     flex-direction: column;
     justify-content:start;
     align-items: center;
-    padding: clamp(32px, 6.107vw + 9.1px, 56px) 32px 64px 32px;
+    padding: clamp(var(--spacing-200), 6.107vw + 9.1px, 56px) var(--spacing-200) var(--spacing-400) var(--spacing-200);
 }
 
 /* --- circle ----- */
 .main-content{
     display: flex;
     flex-direction: column;
-    row-gap: 64px;
+    row-gap: var(--spacing-400);
 }
 
 .circle-container{
     position: relative;
-    /* Extra top padding accommodates the 50px line extension */
+    /* Extra top padding accommodates the line extension */
     padding-top: var(--line-extension);
     display: flex;
     flex-direction: column;
@@ -320,10 +300,10 @@ button{
 
 .vertical-line{
     position: absolute;
-    /* Starts 50px above the container's normal content flow */
+    /* Starts above the container's normal content flow */
     top: 0; 
     width: 1px;
-    /* Height covers the 50px extension down to the top of the circle */
+    /* Height covers the extension down to the top of the circle */
     height: var(--line-extension);
     background-color: var(--slate-300);
     color: var(--slate-300);
@@ -339,10 +319,11 @@ button{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: var(--h5-size);
-    font-weight: var(--h5-weight);
-    letter-spacing: var(--h5-letter-spacing);
-    line-height: var(--h5-line-height);
+
+    font-size: var(--16-size);
+    font-weight: var(--500-weight);
+    letter-spacing: var(--0-letter-spacing);
+    line-height: var(--15-line-height);
     background-color: var(--white);
 }
 
@@ -354,13 +335,12 @@ button{
     grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 100%;
     gap: 16px;
-    flex: 1;  
     /* Makes the grid take up the remaining space in the flex container */
+    flex: 1;  
     min-height: 0;
     min-width: 0;
 }
 
-/* ! height */
 .content-four-images img{
     width: 100%;
     height: auto;
@@ -380,28 +360,27 @@ button{
 .title-container{
     display: flex;
     flex-direction: column;
-    row-gap: 16px;
+    row-gap: var(--spacing-100);
     justify-content: center;
     align-items: center;
-    /* padding 0 to 117 */
     padding-left: clamp(0px, 29.77vw - 111.64px, 117px);
     padding-right: clamp(0px, 29.77vw - 111.64px, 117px);
 }
 
 .title-container-title{
-    font-size: var(--h6-size);
-    font-weight: var(--h6-weight);
-    letter-spacing: var(--h6-letter-spacing);
-    line-height: var(--h6-line-height);
+    font-size: var(--12-size);
+    font-weight: var(--500-weight);
+    line-height: var(--11-line-height);
+    letter-spacing: var(--25-letter-spacing);
     color: var(--cyan-600);
     text-align: center;
 }
 
 .title-container-description{
-    font-size: var(--h7-size);
-    font-weight: var(--h7-weight);
-    letter-spacing: var(--h7-letter-spacing);
-    line-height: var(--h7-line-height);
+    font-size: var(--32-size);
+    font-weight: var(--900-weight);
+    line-height: var(--11-line-height);
+    letter-spacing: var(--0-letter-spacing);
     color: var(--slate-900);
     text-align: center;
 }
@@ -413,10 +392,10 @@ button{
 }
 
 .description-container-description{
-    font-size: var(--h5-size);
-    font-weight: var(--h5-weight);
-    letter-spacing: var(--h5-letter-spacing);
-    line-height: var(--h5-line-height);
+    font-size: var(--16-size);
+    font-weight: var(--500-weight);
+    letter-spacing: var(--0-letter-spacing);
+    line-height: var(--15-line-height);
     color: var(--slate-600);
     text-align: center;
 
@@ -438,6 +417,7 @@ button{
 }
 
 /* ---------------------- circle ---------------- */
+
 .footer-container .circle-container{
     position: relative;
     top: 28px;
@@ -452,8 +432,8 @@ button{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 64px 32px;
-    row-gap: 24px;
+    padding: var(--spacing-400) var(--spacing-200);
+    row-gap:var(--spacing-150) ;
     width: 100%;
     background-image:
         linear-gradient(rgba(77, 150, 168, 0.8), rgba(77, 150, 168, 0.8)),
@@ -467,37 +447,38 @@ button{
 }
 
 .footer-title{
-    font-size: var(--h7-size);
-    font-weight: var(--h7-weight);
-    letter-spacing: var(--h7-letter-spacing);
-    line-height: var(--h7-line-height);
+    font-size: var(--32-size);
+    font-weight: var(--900-weight);
+    letter-spacing: var(--0-letter-spacing);
+    line-height: var(--11-line-height);
     color: var(--white);
     text-align: center;
 }
 
 .footer-description{
-  font-size: var(--h5-size);
-  font-weight: var(--h5-weight);
-  letter-spacing: var(--h5-letter-spacing);
-  line-height: var(--h5-line-height);
-  color: var(--white);
-  text-align: center;
-  padding: 0px  clamp(2px, 24.94vw - 91.51px, 100px);
+    font-size: var(--16-size);
+    font-weight: var(--500-weight);
+    letter-spacing: var(--0-letter-spacing);
+    line-height: var(--15-line-height);
+    color: var(--white);
+    text-align: center;
+    padding: 0px  clamp(2px, 24.94vw - 91.51px, 100px);
 }
 
 .footer-hero .btn-version{
-  color: var(--purple-300);
+    color: var(--purple-300);
 }
 
-@media screen and (min-width:768px){
+
+@media screen and (min-width:48em){
 
 .main-hero-container{
-    padding-bottom: 64px;
+    padding-bottom: var(--spacing-400);
 }    
 
 
 .hero-container-images{
-    column-gap: 32px;
+    column-gap: var(--spacing-200);
 }
 
 .hero-container-content{
@@ -507,10 +488,10 @@ button{
 }
 
 .hero-content-title{
-    font-size: var(--h8-size);
-    font-weight: var(--h8-weight);
-    line-height: var(--h8-line-height);
-    letter-spacing: var(--h8-letter-spacing);
+    font-size: var(--48-size);
+    font-weight: var(--900-weight);
+    line-height: var(--11-line-height);
+    letter-spacing: var(--0-letter-spacing);
     padding-left: 52px;
     padding-right: 52px;
 }
@@ -521,7 +502,7 @@ button{
 }
 
 .main-content-container{
-    padding-top: 56px;
+    padding-top: var(--spacing-350);
 }
 
 .main-content{
@@ -533,7 +514,7 @@ button{
     display:grid;
     grid-template-columns:repeat(4, minmax(0, 1fr));
     row-gap: 0;
-    column-gap: 24px;
+    column-gap: var(--spacing-150);
 }
 
 .content-four-images img{
@@ -546,16 +527,15 @@ button{
     padding-right: 117px;
 }
 
-/* ? break down fonts by size then a section for weight, then height, then letter spacing. */
 .title-container-title{
-    font-size: var(--h9-size);
-    font-weight: var(--h9-weight);
-    line-height: var(--h9-line-height);
-    letter-spacing: var(--h9-letter-spacing);
+    font-size: var(--14-size);
+    font-weight: var(--500-weight);
+    line-height: var(--11-line-height);
+    letter-spacing: var(--0-letter-spacing);
 }
 
 .title-container-description{
-    font-size: var(--h10-size);
+    font-size: var(--36-size);
 }
 
 .description-container{
@@ -564,7 +544,7 @@ button{
 }
 
 .footer-title{
-    font-size: var(--h10-size);
+    font-size: var(--36-size);
 }
 
 .footer-description{
@@ -573,12 +553,11 @@ button{
 
 }
 
-/* header 80 80 80  */
- @media screen and (min-width:1440px){
+
+@media screen and (min-width:90em){
 
 .header-container{
-    padding: 80px 80px 0 80px;
-
+    padding: var(--spacing-500) var(--spacing-500) 0 var(--spacing-500);
 }
 
 .main-hero-container{
@@ -606,8 +585,8 @@ button{
 .hero-container-content{
     grid-row: 1;
     grid-column: 2;
-    padding: 0px 32px;
-    row-gap: 32px;
+    padding: 0px var(--spacing-200);
+    row-gap: var(--spacing-200);
 }
 
 .hero-image-right{
@@ -621,28 +600,28 @@ button{
 }
 
 .hero-content-title{
-    font-size: var(--h1-size);
+    font-size: var(--64-size);
     padding-left: 0px;
     padding-right: 0;
 }
 
 .hero-content-description{
-    font-size: var(--h4-size);
+    font-size: var(--18-size);
 }
 
 .main-content-container{
-    padding-bottom: 72px;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-bottom:var(--spacing-450) ;
+    padding-left: var(--spacing-500);
+    padding-right: var(--spacing-500);
 }
 
 .main-content{
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: var(--spacing-500);
+    padding-right: var(--spacing-500);
 }
 
 .content-four-images{
-    column-gap: 32px;
+    column-gap: var(--spacing-200);
 }
 
 .content-four-images img{
@@ -655,15 +634,15 @@ button{
 }
 
 .title-container-title{
-    font-size: var(--h5-size);
+    font-size: var(--16-size);
 }
 
 .title-container-description{
-    font-size: var(--h2-size);
+    font-size: var(--40-size);
 }
 
 .description-container-description{
-    font-size: var(--h4-size);
+    font-size: var(--18-size);
 }
 
 .description-container{
@@ -674,26 +653,26 @@ button{
 .footer-hero{
     display: flex;
     flex-direction: row;    
-    padding: 112px 80px;
+    padding: var(--spacing-700) var(--spacing-500);
     justify-content: space-between;
     align-items: flex-start;
 }
 
 .footer-title{
     margin: 0;
-    font-size: var(--h2-size);    
+    font-size: var(--40-size);    
     text-align: left;
     width: 400px;
 }
 
 .footer-description{
-    font-size: var(--h4-size);
+    font-size: var(--18-size);
     text-align: left;
     padding: 0px;
     width: 355px;
 }
 
- }
+}
 
 
 
