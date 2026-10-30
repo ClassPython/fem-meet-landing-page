@@ -139,7 +139,7 @@ header, footer{
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 48px 80px 0px 80px;
+    padding: 48px var(--spacing-500) 0px var(--spacing-500);
     justify-content: center;
     align-items: center;
 }
@@ -334,7 +334,7 @@ button{
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     width: 100%;
-    gap: 16px;
+    gap: var(--spacing-100);
     /* Makes the grid take up the remaining space in the flex container */
     flex: 1;  
     min-height: 0;
@@ -354,7 +354,7 @@ button{
 .content-text{
     display: flex;
     flex-direction: column;
-    row-gap: 32px;
+    row-gap: var(--spacing-200);
 }
 
 .title-container{
@@ -482,7 +482,7 @@ button{
 }
 
 .hero-container-content{
-    column-gap: 72px;
+    column-gap: var(--spacing-450);
     padding-left: 159.85px;
     padding-right: 159.85px;
 }
