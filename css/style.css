@@ -190,7 +190,7 @@ header, footer{
 }
 
 .hero-content-title{
-    font-size: var(--16-size);
+    font-size: var(--40-size);
     font-weight: var(--900-weight);
     line-height: var(--11-line-height);
     letter-spacing: var(--0-letter-spacing);
